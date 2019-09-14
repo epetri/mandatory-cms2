@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { items$, updateItem, addToCart } from '../src/components/store';
+import Mainpage from './components/mainpage';
+import Detailpage from './components/detailpage';
+import Shoppingcart from './components/shoppingCart';
 import './App.css';
 
 function App() {
+  //const [shoppingCart, updateShoppingCart] = useState([]); use till att visa carten i nav
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav className='nav'>
+          <Link className='' to='/'>
+            Home
+          </Link>
+          <Link className='' to='/Shoppingcart'>
+            Shoppingcart
+          </Link>
+        </nav>
+        <Route exact path='/' component={Mainpage} />
+        <Route
+          path='/Detailpage/:id'
+          render={props => <Detailpage {...props} />}
+        />
+        <Route
+          path='/Shoppingcart'
+          render={props => <Shoppingcart {...props} />}
+        />
+      </div>
+    </Router>
   );
 }
 

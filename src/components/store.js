@@ -28,3 +28,23 @@ export function addToCart(product, qty) {
   window.localStorage.setItem('items', JSON.stringify(cart));
   items$.next(cart);
 }
+
+export function decreaseCart(product) {
+  let cart = [...items$.value];
+  const index = cart.findIndex(x => x.product._id === product._id);
+  cart[index].qty -= 1;
+
+  cart = cart.filter(x => x.qty > 0);
+
+  window.localStorage.setItem('items', JSON.stringify(cart));
+  items$.next(cart);
+}
+
+export function increaseCart(product) {
+  let cart = [...items$.value];
+  const index = cart.findIndex(x => x.product._id === product._id);
+  cart[index].qty += 1;
+
+  window.localStorage.setItem('items', JSON.stringify(cart));
+  items$.next(cart);
+}

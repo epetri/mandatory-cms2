@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { items$, updateItem, addToCart } from '../src/components/store';
+//import { items$, updateItem, addToCart } from '../src/components/store';
 import Mainpage from './components/mainpage';
 import Detailpage from './components/detailpage';
 import Shoppingcart from './components/shoppingCart';

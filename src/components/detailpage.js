@@ -17,8 +17,6 @@ function getImg(item) {
 }
 
 function reviewList(review) {
-  console.log(review.rating);
-
   return (
     <li className='review-li'>
       <h3 className='review-title'>{review.title}</h3>

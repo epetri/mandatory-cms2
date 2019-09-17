@@ -8,18 +8,22 @@ function Search(props) {
 
   return (
     <div>
-      <input
-        className='searchField'
-        type='text'
-        value={props.searchVal}
-        placeholder='Search'
-        onChange={e => searchField(e)}
-      />
-      <input
-        className='checkbox'
-        type='checkbox'
-        onClick={e => props.updateStock(e.target.checked)}
-      />
+      <label className='checkbox'>
+        In stock
+        <input
+          type='checkbox'
+          onClick={e => props.updateStock(e.target.checked)}
+        />
+      </label>
+      <label>
+        <input
+          className='searchField'
+          type='text'
+          value={props.searchVal}
+          placeholder='Search'
+          onChange={e => searchField(e)}
+        />
+      </label>
     </div>
   );
 }

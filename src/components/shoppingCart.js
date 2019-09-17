@@ -35,7 +35,7 @@ function ShoppingCart() {
           </Link>
           {item.product.amount_in_stock <= 3 ? (
             <h4 className='amountInStock' style={{ color: 'red' }}>
-              Bara {item.product.amount_in_stock} kvar!
+              Färre än 3 kvar!
             </h4>
           ) : (
             <h4 className='amountInStock'>
@@ -67,40 +67,43 @@ function ShoppingCart() {
   }
 
   return (
-    <div className='cart-conatiner'>
+    <div>
       <Helmet>
         <title>Home</title>
       </Helmet>
-      {showPopup ? <CheckOut updateShowpopup={updateShowpopup} /> : null}
-      {items$.value ? (
-        <>
-          <ul className='cart-ul'>
-            <div className='cart-container-headers'>
-              <h6>Produkter</h6>
-              <h6>Lagerstatus</h6>
-              <h6>Antal</h6>
-              <h6>Totalt</h6>
+      <div className='cartConatiner'>
+        {showPopup ? <CheckOut updateShowpopup={updateShowpopup} /> : null}
+        {items$.value ? (
+          <>
+            <ul className='cart-ul'>
+              <div className='cart-container-headers'>
+                <h6>Produkter</h6>
+                <h6>Lagerstatus</h6>
+                <h6>Antal</h6>
+                <h6>Pris</h6>
+              </div>
+              {items.map(item => {
+                return createList(item);
+              })}
+            </ul>
+            <div className='cartSum-container'>
+              <div className='cartSum-div'>
+                <p className='total'> Total slutsumma {sum}SEK</p>
+                <button
+                  className='checkout'
+                  onClick={() => {
+                    updateShowpopup(true);
+                  }}
+                >
+                  Check out
+                </button>
+              </div>
             </div>
-            {items.map(item => {
-              return createList(item);
-            })}
-          </ul>
-          <div className='cartSum-container'>
-            <div className='cartSum-div'>
-              <p> Total slutsumma {sum}SEK</p>
-              <button
-                onClick={() => {
-                  updateShowpopup(true);
-                }}
-              >
-                Check out
-              </button>
-            </div>
-          </div>
-        </>
-      ) : (
-        <p>your shoppingcart is empty</p>
-      )}
+          </>
+        ) : (
+          <p>your shoppingcart is empty</p>
+        )}
+      </div>
     </div>
   );
 }

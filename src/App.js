@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-//  import { items$, updateItem, addToCart } from '../src/components/store';
 import Mainpage from './components/mainpage';
 import Detailpage from './components/detailpage';
 import Shoppingcart from './components/shoppingCart';
@@ -9,8 +8,6 @@ import Confirm from './components/confirmPage';
 import './App.css';
 
 function App() {
-  //const [shoppingCart, updateShoppingCart] = useState([]); use till att visa carten i nav
-
   const [searchVal, updateSearchVal] = useState('');
   const [stock, updateStock] = useState(false);
 
@@ -30,7 +27,7 @@ function App() {
             />
             <Link className='nav-link' id='shoppingcart' to='/Shoppingcart'>
               Shoppingcart
-              <i class='fas fa-shopping-cart'></i>
+              <i className='fas fa-shopping-cart'></i>
             </Link>
           </nav>
         </header>

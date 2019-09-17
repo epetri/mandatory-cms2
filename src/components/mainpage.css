@@ -46,6 +46,8 @@
   position: absolute;
   right: 10px;
   top: 50%;
+  outline: none;
+  cursor: pointer;
 }
 
 .button-left {
@@ -55,6 +57,8 @@
   position: absolute;
   left: 10px;
   top: 50%;
+  outline: none;
+  cursor: pointer;
 }
 
 .page {

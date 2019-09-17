@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { updateItems } from './store';
+import { emptyCart } from './store';
 import { Redirect } from 'react-router-dom';
 import './confirmpage.css';
 
@@ -9,7 +9,7 @@ function CheckOut(props) {
 
   function confirmation() {
     updateConfirm(true);
-    updateItems();
+    emptyCart();
   }
 
   function saveName(e) {

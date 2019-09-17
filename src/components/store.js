@@ -48,3 +48,12 @@ export function increaseCart(product) {
   window.localStorage.setItem('items', JSON.stringify(cart));
   items$.next(cart);
 }
+
+export function emptyCart() {
+  let cart = items$.value;
+
+  cart = [];
+
+  window.localStorage.setItem('items', JSON.stringify(cart));
+  items$.next(cart);
+}

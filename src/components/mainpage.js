@@ -8,7 +8,7 @@ const API = 'http://192.168.99.100:8080/';
 
 function createList(product) {
   return (
-    <Link key={product._id} to={'/detailpage/' + product._id}>
+    <Link className='link' key={product._id} to={'/detailpage/' + product._id}>
       <li>
         <div className='product-div'>
           <img
@@ -76,14 +76,14 @@ function MainPage(props) {
           return createList(product);
         })}
       </ul>
-      <p>
+      <p className='page'>
         {showPage}/{nrOfPages}
       </p>
       <button className='button-left' onClick={() => decreasePage()}>
-        <i className='fas fa-chevron-left'></i>Back
+        <i className='fas fa-chevron-left'></i>
       </button>
       <button className='button-right' onClick={() => increasePage()}>
-        Next
+        <i className='fas fa-chevron-right'></i>
       </button>
     </div>
   );

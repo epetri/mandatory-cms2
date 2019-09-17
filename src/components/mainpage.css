@@ -1,4 +1,5 @@
 .main-container {
+  height: 100%;
 }
 
 .main-container-ul {
@@ -13,23 +14,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1px grey;
   width: 300px;
-  margin: 5px;
+  margin: 20px;
+  transition: transform 0.25s ease;
+  text-align: center;
+}
+
+.product-div:hover {
+  transform: scale(1.1);
 }
 
 .product-img {
   max-height: 400px;
 }
 
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.product-name {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 400;
+}
+
 .button-right {
+  font-size: 65px;
+  background: initial;
+  border: none;
   position: absolute;
   right: 10px;
   top: 50%;
 }
 
 .button-left {
+  font-size: 65px;
+  background: initial;
+  border: none;
   position: absolute;
   left: 10px;
   top: 50%;
+}
+
+.page {
+  text-align: center;
+  font-size: 20px;
 }

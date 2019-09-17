@@ -30,6 +30,7 @@ function App() {
             />
             <Link className='nav-link' id='shoppingcart' to='/Shoppingcart'>
               Shoppingcart
+              <i class='fas fa-shopping-cart'></i>
             </Link>
           </nav>
         </header>

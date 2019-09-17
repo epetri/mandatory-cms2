@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(164, 168, 168);
+  background-color: black;
   height: 85px;
   position: relative;
 }
@@ -11,6 +11,7 @@
   position: absolute;
   bottom: 0;
   padding-bottom: 10px;
+  align-items: flex-end;
 }
 
 .nav-link {
@@ -19,11 +20,17 @@
   font-size: 30px;
 }
 
-.home {
+.searchField {
+  width: 230px;
+  background-color: #3a3a3a;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  text-align: center;
+  outline: none;
 }
 
-.shoppingcart {
-}
-
-.search {
+.searchField:focus {
+  background-color: white;
+  color: black;
 }

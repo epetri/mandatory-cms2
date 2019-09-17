@@ -7,10 +7,11 @@ import './detailpage.css';
 
 const API = 'http://192.168.99.100:8080/';
 
-function getImg(item) {
+function getImg(item) {  
+  
   return (
-    <div key={item._id} className='item-img-container'>
-      {item.image.map(image => {
+    <div  className='item-img-container'>
+      {item.image.map(image => {        
         return <img className='item-img' src={API + image.path} alt='' />; //fixa key
       })}
     </div>

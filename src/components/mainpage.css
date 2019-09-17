@@ -21,3 +21,15 @@
 .product-img {
   max-height: 400px;
 }
+
+.button-right{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.button-left{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+}

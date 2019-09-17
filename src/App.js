@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-//import { items$, updateItem, addToCart } from '../src/components/store';
+//  import { items$, updateItem, addToCart } from '../src/components/store';
 import Mainpage from './components/mainpage';
 import Detailpage from './components/detailpage';
 import Shoppingcart from './components/shoppingCart';
 import Search from './components/search';
+import Confirm from './components/confirmPage';
 import './App.css';
-
-
 
 function App() {
   //const [shoppingCart, updateShoppingCart] = useState([]); use till att visa carten i nav
@@ -19,20 +18,26 @@ function App() {
     <Router>
       <div>
         <header className='header'>
-        <nav className='nav'>
-          <Link className='nav-link' id='home'  to='/'>
-            Home
-          </Link>          
-          <Search className='search' updateSearchVal={updateSearchVal} searchVal={searchVal} updateStock={updateStock}/>
-          <Link className='nav-link' id='shoppingcart' to='/Shoppingcart'>
-            Shoppingcart
-          </Link>
-        </nav>
+          <nav className='nav'>
+            <Link className='nav-link' id='home' to='/'>
+              Home
+            </Link>
+            <Search
+              className='search'
+              updateSearchVal={updateSearchVal}
+              searchVal={searchVal}
+              updateStock={updateStock}
+            />
+            <Link className='nav-link' id='shoppingcart' to='/Shoppingcart'>
+              Shoppingcart
+            </Link>
+          </nav>
         </header>
 
-        <Route exact path='/' 
-        render={()=> <Mainpage searchVal={searchVal} stock={stock}/>}
-          
+        <Route
+          exact
+          path='/'
+          render={() => <Mainpage searchVal={searchVal} stock={stock} />}
         />
         <Route
           path='/Detailpage/:id'
@@ -40,8 +45,9 @@ function App() {
         />
         <Route
           path='/Shoppingcart'
-          render={props => <Shoppingcart {...props}/>}
+          render={props => <Shoppingcart {...props} />}
         />
+        <Route path='/Confirm' component={Confirm} />
       </div>
     </Router>
   );

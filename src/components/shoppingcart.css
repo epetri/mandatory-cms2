@@ -1,103 +1,108 @@
 .cart-container {
-
 }
 
-
 .cart-container-headers {
-width: 800px;
- display: flex;
-justify-content: space-between;
-margin-left: 100px;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
 }
 
 .cart-container-headers > h6 {
-    margin: 5px;
+  margin: 5px;
 }
 
 .cart-ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
 }
 
 .cart-item {
-    width: 1000px;
-    box-shadow: 0px 1px 0px 0px grey;
-
+  width: 1000px;
+  box-shadow: 0px 1px 0px 0px grey;
 }
 
-.cart-item-div{
-    position: relative;
+.cart-item-div {
+  position: relative;
 }
 
-.item-img{
-    height: 150px;
-    margin: 5px;
+.item-img {
+  height: 150px;
+  margin: 5px;
 }
 
-.item-qty{
-    position: absolute;
-    top: 10px;
-    left: 430px;
-    margin: 0;
+.item-qty {
+  position: absolute;
+  top: 10px;
+  left: 430px;
+  margin: 0;
 }
 
-#item-name{
-    color: gray;
-    position: absolute;
-    margin: 0;
-    top: 10px;
-    left: 110px;
+#item-name {
+  color: gray;
+  position: absolute;
+  margin: 0;
+  top: 10px;
+  left: 110px;
 }
 
-#item-name:hover{
-    text-decoration: underline;
+#item-name:hover {
+  text-decoration: underline;
 }
 
-.item-totalPrice{
-    color: gray;
-    position: absolute;
-    margin: 0;
-    top: 10px;
-    right: 40px;
+.item-totalItemPrice {
+  color: gray;
+  position: absolute;
+  margin: 0;
+  top: 10px;
+  right: 40px;
 }
 
-.item-stPrice{
-    color: #bbbbbb;
-    position: absolute;
-    margin: 0;
-    top: 30px;
-    right: 45px;
-    font-weight: 100;
+.item-stPrice {
+  color: #bbbbbb;
+  position: absolute;
+  margin: 0;
+  top: 30px;
+  right: 45px;
+  font-weight: 100;
 }
 
-.amountItems{
-    color: gray;
-    position: absolute;
-    margin: 0;
-    top: 0;
-    right: 281px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.amountItems {
+  color: gray;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 281px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.amountButtons{
-    color: gray;
-    background-color: initial;
-    border: none;
-    font-size: 20px;
-    outline: none;
-    height: 30px;
-    margin: 0 2px 0 2px;
-
+.amountInStock {
+  color: gray;
+  position: absolute;
+  top: 10px;
+  margin: 0;
+  right: 417px;
+  font-weight: 400;
 }
 
-.amountButtons:hover{
-    color: black;
+.amountButtons {
+  color: gray;
+  background-color: initial;
+  border: none;
+  font-size: 20px;
+  outline: none;
+  height: 30px;
+  margin: 0 2px 0 2px;
 }
 
-#product-name{
-    color: darkcyan;
+.amountButtons:hover {
+  color: black;
+}
+
+#product-name {
+  color: darkcyan;
 }

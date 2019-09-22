@@ -55,51 +55,71 @@ function DetailPage({ match }) {
         <p>Loading...</p>
       ) : (
         <div className='item-container'>
-          <>{getImg(item)}</>
-          <div className='iteminfo-container'>
-            <h1 className='item-name'>{item.name}</h1>
-            <h3 className='item-price'>{item.price}SEK</h3>
-            {item.amount_in_stock <= 3 ? (
-              <h5 style={{ color: 'red' }} className='item-amount'>
-                Färre än 3 Kvar!
-              </h5>
-            ) : (
-              <h5 className='item-amount'>{item.amount_in_stock} kvar</h5>
-            )}
+          <div className='imgAndInfo_container'>
+            <>{getImg(item)}</>
 
-            <p className='item-description'>{item.description}</p>
-            <form
-              onSubmit={e => e.preventDefault()}
-              className='addItemToCart-Form'
-            >
-              {' '}
-              Antal:
-              <input
-                className='amount'
-                type='number'
-                name='qty'
-                min='1'
-                placeholder='amount'
-                value={amount}
-                onChange={e => updateAmount(parseInt(e.target.value))}
-              />
-              <button
-                className='addToCartButt'
-                type='submit'
-                value='submit'
-                onClick={() => addToCart(item, amount)}
+            <div className='iteminfo-container'>
+              <h1 className='item-name'>{item.name}</h1>
+              <h3 className='item-price'>{item.price}SEK</h3>
+              {item.amount_in_stock <= 3 ? (
+                <h5 style={{ color: 'red' }} className='item-amount'>
+                  Färre än 3 Kvar!
+                </h5>
+              ) : (
+                <h5 className='item-amount'>{item.amount_in_stock} kvar</h5>
+              )}
+
+              <p className='item-description'>{item.description}</p>
+              <form
+                onSubmit={e => e.preventDefault()}
+                className='addItemToCart-Form'
               >
-                Add to shoppingcart
-              </button>
-            </form>
+                {' '}
+                Antal:
+                <input
+                  className='amount'
+                  type='number'
+                  name='qty'
+                  min='1'
+                  placeholder='amount'
+                  value={amount}
+                  onChange={e => updateAmount(parseInt(e.target.value))}
+                />
+                <button
+                  className='addToCartButt'
+                  type='submit'
+                  value='submit'
+                  onClick={() => addToCart(item, amount)}
+                >
+                  Add to shoppingcart
+                </button>
+              </form>
+            </div>
           </div>
+
           <div className='item-review'>
             <h4 className='item-review-header'>Kundrecensioner</h4>
+
             <ul className='item-review-ul'>
               {reviews.map(review => {
                 return reviewList(review);
               })}
             </ul>
+            <h4 className='item-review-header'>Skriv ny recension</h4>
+            <div className='leaveReview'>
+              <form className='leaveReview-form'>
+                <input
+                  className='leaveReview-name'
+                  type='text'
+                  placeholder='Namn'
+                ></input>
+                <textarea
+                  className='leaveReview-text'
+                  placeholder='Skriv omdöme'
+                ></textarea>
+              </form>
+              <button className='leaveReview-button'>Send</button>
+            </div>
           </div>
         </div>
       )}

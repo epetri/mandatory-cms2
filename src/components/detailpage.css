@@ -1,24 +1,26 @@
 .item-container {
-  position: relative;
-  height: 100vh;
+  /* position: relative;
+  height: 100vh; */
+}
+
+.imgAndInfo_container {
+  display: flex;
 }
 
 /* IMG */
 
 .item-img-container {
-  position: absolute;
-  left: 40px;
-  top: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 450px;
+  height: 475px;
   width: 800px;
+  overflow: hidden;
+  margin-left: 10px;
 }
 
 .pictures {
   height: 350px;
-  margin: 5px;
+  margin: 15px;
   transition: transform 0.25s ease;
 }
 
@@ -29,32 +31,26 @@
 /* INFO */
 
 .iteminfo-container {
-  position: absolute;
-  right: 150px;
-  top: 45px;
   max-width: 480px;
-}
-
-.addItemToCart-Form {
+  margin-left: 10px;
 }
 
 /* Item Review */
 
 .item-review {
-  overflow: auto;
-  position: absolute;
-  left: 40px;
-  bottom: 25px;
-  background-color: #ececec;
-  width: 720px;
-  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
+  margin-bottom: 15px;
+  color: #777777;
 }
 
 .item-review-header {
   margin: 5px 40px;
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 200;
+  font-size: 25px;
 }
 
 .item-review-ul {
@@ -68,19 +64,64 @@
   border-radius: 5px;
   box-sizing: border-box;
   padding: 15px;
-  box-shadow: inset 0px 0px 3px 0px;
+  border-bottom: 1px solid #e5e5e5;
   margin: 5px;
 }
 
 .review-title {
   margin: 0;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .review-body {
   margin: 0;
+  font-weight: 300;
 }
 
 .review-rating {
+}
+
+/* Leave New Review */
+
+.leaveReview {
+  box-sizing: border-box;
+  width: 640px;
+}
+
+.leaveReview-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.leaveReview-name {
+  margin: 10px;
+  height: 25px;
+  padding-left: 10px;
+}
+
+.leaveReview-text {
+  margin: 10px;
+  height: 25px;
+  padding: 10px;
+  height: 100px;
+}
+
+.leaveReview-button {
+  background-color: black;
+  width: 80px;
+  height: 20px;
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.leaveReview-button:active {
+  box-shadow: 1px 1px 12px 2px grey;
 }
 
 /* Add Button */

@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className='container'>
         <header className='header'>
           <nav className='nav'>
             <Link className='nav-link' id='home' to='/'>

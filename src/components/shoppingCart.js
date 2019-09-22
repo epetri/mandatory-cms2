@@ -61,6 +61,7 @@ function ShoppingCart() {
           </div>
           <h4 className='item-totalItemPrice'>{sumItem}:-</h4>
           <h5 className='item-stPrice'>({item.product.price}:-)</h5>
+          {/* <i className='fas fa-trash-alt'></i> */}
         </div>
       </li>
     );

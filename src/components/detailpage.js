@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { addToCart } from './store';
 import axios from 'axios';
 import './detailpage.css';
+import LeaveReview from './leavreview';
 
 const API = 'http://192.168.99.100:8080/';
 
@@ -105,21 +106,7 @@ function DetailPage({ match }) {
                 return reviewList(review);
               })}
             </ul>
-            <h4 className='item-review-header'>Skriv ny recension</h4>
-            <div className='leaveReview'>
-              <form className='leaveReview-form'>
-                <input
-                  className='leaveReview-name'
-                  type='text'
-                  placeholder='Namn'
-                ></input>
-                <textarea
-                  className='leaveReview-text'
-                  placeholder='Skriv omdöme'
-                ></textarea>
-              </form>
-              <button className='leaveReview-button'>Send</button>
-            </div>
+            <LeaveReview review={reviews} updateReviews={updateReviews} />
           </div>
         </div>
       )}

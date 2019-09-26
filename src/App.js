@@ -10,6 +10,7 @@ import './App.css';
 function App() {
   const [searchVal, updateSearchVal] = useState('');
   const [stock, updateStock] = useState(false);
+  const [page, updatePage] = useState(0);
 
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
               updateSearchVal={updateSearchVal}
               searchVal={searchVal}
               updateStock={updateStock}
+              page={page}
             />
             <Link className='nav-link' id='shoppingcart' to='/Shoppingcart'>
               Shoppingcart
@@ -35,7 +37,15 @@ function App() {
         <Route
           exact
           path='/'
-          render={() => <Mainpage searchVal={searchVal} stock={stock} />}
+          render={props => (
+            <Mainpage
+              {...props}
+              searchVal={searchVal}
+              stock={stock}
+              page={page}
+              updatePage={updatePage}
+            />
+          )}
         />
         <Route
           path='/Detailpage/:id'

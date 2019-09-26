@@ -27,24 +27,22 @@ function createList(product) {
 function MainPage(props) {
   const [products, updateProducts] = useState([]);
   const [total, updateTotal] = useState(0);
-  const [page, updatePage] = useState(0);
   const limit = 3;
   const nrOfPages = Math.ceil(total / limit);
-  let showPage = page + 1;
+  let showPage = props.page + 1;
 
   function increasePage() {
-    if (page === nrOfPages - 1) {
-      updatePage(0);
+    if (props.page === nrOfPages - 1) {
+      props.updatePage(0);
     } else {
-      updatePage(page + 1);
+      props.updatePage(props.page + 1);
     }
   }
-
   function decreasePage() {
-    if (page === 0) {
-      updatePage(nrOfPages - 1);
+    if (props.page === 0) {
+      props.updatePage(nrOfPages - 1);
     } else {
-      updatePage(page - 1);
+      props.updatePage(props.page - 1);
     }
   }
 
@@ -52,7 +50,8 @@ function MainPage(props) {
     let regexStock = '';
     if (props.stock) regexStock = '^[1-9]d*';
 
-    const skip = limit * page;
+    const skip = limit * props.page;
+
     axios
       .post(API + `api/collections/get/products?limit=${limit}&skip=${skip}`, {
         filter: {
@@ -64,7 +63,7 @@ function MainPage(props) {
         updateProducts(response.data.entries);
         updateTotal(response.data.total);
       });
-  }, [page, props.searchVal, props.stock]); //Checkbox
+  }, [props.page, props.searchVal, props.stock]); //Checkbox
 
   return (
     <div className='main-container'>
@@ -79,9 +78,11 @@ function MainPage(props) {
       <p className='page'>
         {showPage}/{nrOfPages}
       </p>
+
       <button className='button-left' onClick={() => decreasePage()}>
         <i className='fas fa-chevron-left'></i>
       </button>
+
       <button className='button-right' onClick={() => increasePage()}>
         <i className='fas fa-chevron-right'></i>
       </button>

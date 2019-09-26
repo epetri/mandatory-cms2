@@ -6,11 +6,12 @@ import CheckOut from './checkOut';
 import './shoppingcart.css';
 
 const API = 'http://192.168.99.100:8080/';
+let sum = 0;
+let inCart;
 
 function ShoppingCart() {
   const [items, updateItems] = useState(items$.value);
   const [showPopup, updateShowpopup] = useState(false);
-  let sum = 0;
 
   useEffect(() => {
     const subscription = items$.subscribe(updateItems);
@@ -18,7 +19,7 @@ function ShoppingCart() {
   }, []);
 
   function createList(item) {
-    let inCart = item.qty;
+    inCart = item.qty;
     let sumItem = item.product.price * inCart;
     sum += sumItem;
 
@@ -73,7 +74,14 @@ function ShoppingCart() {
         <title>Home</title>
       </Helmet>
       <div className='cartConatiner'>
-        {showPopup ? <CheckOut updateShowpopup={updateShowpopup} /> : null}
+        {showPopup ? (
+          <CheckOut
+            inCart={inCart}
+            sum={sum}
+            updateShowpopup={updateShowpopup}
+            items={items}
+          />
+        ) : null}
         {items$.value ? (
           <>
             <ul className='cart-ul'>
